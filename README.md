@@ -22,4 +22,4 @@ The eSQG methodology is valid for structures between ~20 km and 400 km, from bel
 
 This method uses a spectral analysis, so there are a few things to keep in mind for the structure of the domain:
 - The domain should be in the open ocean, no costs or islands 
-- The x and y dimensions should be similar otherwise structures will have the tendency to align along one preferential direction
+- The x and y dimensions should be similar otherwise structures will have the tendency to align along one preferential direction 
