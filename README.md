@@ -1,8 +1,8 @@
-[![DOI](https://sandbox.zenodo.org/badge/951415482.svg)](https://handle.stage.datacite.org/10.5072/zenodo.190605)
+[![DOI](https://zenodo.org/badge/951415482.svg)](https://doi.org/10.5281/zenodo.15088479)
 
 
 This code has been created by Elisa Carli, Lia Siegelman and Patrice Klein.
-If you use this code, please cite [the zenodo DOI for the code repo](https://handle.stage.datacite.org/10.5072/zenodo.190605) and Carli et al. 2024. [10.1029/2024JC021216](10.1029/2024JC021216)
+If you use this code, please cite [the Zenodo repository for the code](https://doi.org/10.5281/zenodo.15088479) and Carli et al. 2024. [10.1029/2024JC021216](10.1029/2024JC021216)
 
 
 # eSQG
