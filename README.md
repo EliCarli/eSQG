@@ -5,14 +5,14 @@ If you use this code, please cite [the zenodo DOI for the code repo] and Carli e
 # eSQG
 How to apply the eSQG to altimetry surface fields and retrieve vertical velocities
 
-The effective version of the Surface Quasi Geostrophy theory is first instroduced by Lapeyre and Klein (2006) and is based on the reduction of Eady's model for baroclinic instabilities from one boundary (here the ocean surface), used to describe the oceanic mesoscale eddy fields in the surface layers (Klein & Lapeyre, 2009).
-This approach is valid for the surface intensified eddies. The reconstruction of other eddies, namely subsurface intensified eddies, requires the combination of the effective sQG with the interior sQG (iSQG) as in Wang et al. (2013), where both have a signature in SSH. 
+The effective version of the Surface Quasi Geostrophy theory is first instroduced by Lapeyre and Klein [(2006)](https://journals.ametsoc.org/view/journals/phoc/36/2/jpo2840.1.xml) and is based on the reduction of Eady's model for baroclinic instabilities from one boundary (here the ocean surface), used to describe the oceanic mesoscale eddy fields in the surface layers (Klein & Lapeyre, [2009](https://www.annualreviews.org/content/journals/10.1146/annurev.marine.010908.163704)).
+This approach is valid for the surface intensified eddies. The reconstruction of other eddies, namely subsurface intensified eddies, requires the combination of the effective sQG with the interior sQG (iSQG) as in Wang et al. [(2013)](https://journals.ametsoc.org/view/journals/phoc/43/8/jpo-d-12-0204.1.xml), where both have a signature in SSH. 
 
-The major assumption for effective sQG is that potential vorticity ($PV$) is uniform and constant in the ocean interior. Using $PV$  inversion, one can retrieve a geostrophic stream function ($ψ$) related to $PV$ using an elliptic operator (Klein et al., 2009). Following Klein et al. (2009) and assuming a doubly periodic domain, the geostrophic stream function is retrieved at all depths ($z$) from SSH ($η$) using an exponential decay as
+The major assumption for effective sQG is that potential vorticity ($PV$) is uniform and constant in the ocean interior. Using $PV$  inversion, one can retrieve a geostrophic stream function ($ψ$) related to $PV$ using an elliptic operator (Klein et al.,  [2009](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL038359)). Following Klein et al. [(2009)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL038359) and assuming a doubly periodic domain, the geostrophic stream function is retrieved at all depths ($z$) from SSH ($η$) using an exponential decay as
 
 $$\hat{\psi} (\mathbf{k}, z) = \frac{g}{f}\hat{η}(\mathbf{k})exp\left(\frac{N_0}{f}kz\right)$$
 
-where  $\widehat{\left(.\right)}$   corresponds to the Fourier transform, $\mathbf{k} = (kx, ky)$ is the wavenumber vector and $k = \mathbf{k}$ is its norm, $g$ is the gravity constant, $f$ is the Coriolis frequency, $N_0$ is a Brunt‐Väissälä frequency that accounts for the contribution of the interior $PV$. Vertical motions are retrieved from the buoyancy equations as in Klein et al. (2009)
+where  $\widehat{\left(.\right)}$   corresponds to the Fourier transform, $\mathbf{k} = (kx, ky)$ is the wavenumber vector and $k = \mathbf{k}$ is its norm, $g$ is the gravity constant, $f$ is the Coriolis frequency, $N_0$ is a Brunt‐Väissälä frequency that accounts for the contribution of the interior $PV$. Vertical motions are retrieved from the buoyancy equations as in Klein et al. [(2009)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2009GL038359)
 
 $$\hat{w}(\mathbf{k}, z) = −\frac{c^2}{N^2_0}\left[−J\left(\widehat{ψ_s, b_s}\right)exp\left(\frac{N_0}{f}kz\right) + J\left(\widehat{ψ, b}\right)\right]$$
 
