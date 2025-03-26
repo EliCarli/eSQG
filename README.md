@@ -1,3 +1,7 @@
+This code has been created by Elisa Carli, Lia Siegelman and Patrice Klein.
+If you use this code, please cite [the zenodo DOI for the code repo] and Carli et al. 2024. [(10.1029/2024JC021216)] 
+
+
 # eSQG
 How to apply the eSQG to altimetry surface fields and retrieve vertical velocities
 
