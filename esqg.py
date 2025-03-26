@@ -23,7 +23,7 @@
 # ##
 # ################################################################################### 
 # ##
-# ##      COPYRIGHT: Patrice KLEIN, Lia Siegelman, Elisa Carli, April 2025 
+# ##      COPYRIGHT: Elisa Carli, Lia Siegelman, Patrice KLEIN, April 2025 
 # ##
 # ##
 # ###################################################################################
@@ -37,29 +37,6 @@ def doubly_per(data):
     data = np.hstack((data,np.fliplr(data)))
     data_per = np.vstack((np.flipud(data),data))
     return data_per
-
-def wvnumb_vector(dx,dy,Ni,Nj): 
-    ''' Compute a wavenumber vector  '''
-    # - obtain dx and dy
-
-    kx = np.fft.fftfreq(Ni,dx) # two sided
-    ky = np.fft.fftfreq(Nj,dy)
-    Kmax = max(kx.max(), ky.max())
-
-    k, l = np.meshgrid(kx,ky)
-    wavnum2D = np.sqrt(k**2 + l**2)
-
-    # radial wavenumber
-    ddk = 1./(dx*Ni)
-    ddl = 1./(dy*Nj)
-
-    dK = max(ddk,ddl)
-    wavnum1D = dK*np.arange(1,int(Kmax/dK))
-    return wavnum1D,wavnum2D,kx,ky, k, l
-
-def det2d(data): ## detrend time/lon/lat 
-    data2=detrend(data,axis=1,type='linear') ## detrend longitudes
-    return detrend(data2,axis=0,type='linear') ## deterend times
 
 def detrend_harmonic(phi):
     '''
@@ -148,11 +125,10 @@ def sqg_w(ssh, cc, rho_cst, M, L, N, kk, kkx, kky, zz, goN02orho0, gof0):
 
 
     kz=0
-    for k in range(0,N):  #(1,N,2)
-        # print(r'k = '+str(k))
+    for k in range(0,N): 
 
         if kz == 0:
-            w_sqg_matr = np.zeros([len(np.arange(0,N)),int(M/2-6),int(L/2-6)]) #,210,224
+            w_sqg_matr = np.zeros([len(np.arange(0,N)),int(M/2-6),int(L/2-6)])
 
         func_exp = np.zeros((M, L))
         func_exp = np.exp(kk*zz[k])
@@ -230,7 +206,6 @@ def sqg_rho(ssh,M,L,N,kk,rho_cst,cc, zz_rmean):
     kz=0
     for k in range(0,N):
         k_coas = k
-        # print(r'k = '+str(k))
         if kz == 0:
             rho_sqg_matr = np.zeros([len(np.arange(0,N)),int(M/2-6),int(L/2-6)])
 
